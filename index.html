@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Math Wake-Up</title>
+                <style>
+                        body { text-align: center; font-family: Arial, sans-serif; }
+                                input, button { font-size: 20px; padding: 5px; margin-top: 10px; }
+                                    </style>
+                                    </head>
+                                    <body>
+                                        <h2>Wake Up with Math!</h2>
+                                            <p id="question"></p>
+                                                <input type="number" id="answer" placeholder="Enter answer">
+                                                    <button onclick="checkAnswer()">Submit</button>
+                                                        <audio id="alarm" src="alarm.mp3" autoplay loop></audio>
+
+                                                            <script>
+                                                                    let num1 = Math.floor(Math.random() * 10) + 1;
+                                                                            let num2 = Math.floor(Math.random() * 10) + 1;
+                                                                                    let correctAnswer = num1 + num2;
+                                                                                            document.getElementById("question").innerText = `Solve: ${num1} + ${num2} = ?`;
+                                                                                                    let alarm = document.getElementById("alarm");
+
+                                                                                                            function checkAnswer() {
+                                                                                                                        let userAnswer = parseInt(document.getElementById("answer").value);
+                                                                                                                                    if (userAnswer === correctAnswer) {
+                                                                                                                                                    alarm.pause();
+                                                                                                                                                                    alert("Correct! Time for school!");
+                                                                                                                                                                                } else {
+                                                                                                                                                                                                alert("Wrong! Try again.");
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                        </script>
+                                                                                                                                                                                                                        </body>
+                                                                                                                                                                                                                        </html>
+                                                                                                                                                                                                                        
